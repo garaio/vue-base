@@ -1,5 +1,3 @@
-    <PwaRefreshUi />
-    <h2>Version: {{ packageName }} {{ packageVersion }}</h2>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import packageJSON from "@/../package.json";
@@ -39,6 +37,8 @@ export default class App extends Vue {
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to the GARAIO Emergency Room Vue.js Base App" />
     <Counter />
+    <h2>Version: {{ packageName }} {{ packageVersion }}</h2>
+    <PwaRefreshUi />
   </div>
 </template>
 
