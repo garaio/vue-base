@@ -1,3 +1,7 @@
+# vue-base-pwa README
+
+Please check specific readme file: [README-PWA.md](./README-PWA.md)
+
 # vue-base
 
 This is a possible base setup of Vue.js for the Emergency Room team.
