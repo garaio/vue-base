@@ -3,8 +3,8 @@
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to the GARAIO Emergency Room Vue.js Base App" />
     <Counter />
-    <PwaRefreshUi />
     <h2>Version: {{ packageName }} {{ packageVersion }}</h2>
+    <PwaRefreshUi />
   </div>
 </template>
 

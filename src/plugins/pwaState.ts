@@ -26,12 +26,12 @@ const PwaState = {
 
     // pwa in offline mode
     document.addEventListener("swOffline", () => {
-      console.log("[pwaPlugin] pwa running in offline mode");
+      console.log("[pwaPlugin] Service Worker running in offline mode");
     });
 
     // isReady
     document.addEventListener("swReady", () => {
-      console.log("[pwaPlugin] pwa isReady");
+      console.log("[pwaPlugin] Service Worker isReady");
       state.isReady = true;
     });
 
@@ -39,11 +39,13 @@ const PwaState = {
     // listen for network status changes
     window.addEventListener("online", () => {
       state.isOffline = false;
-      console.log(state.isOffline);
+      console.log("[pwaPlugin] isOffline", state.isOffline);
+      console.log("[pwaPlugin] network is now online");
     });
     window.addEventListener("offline", () => {
       state.isOffline = true;
-      console.log(state.isOffline);
+      console.log("[pwaPlugin] isOffline", state.isOffline);
+      console.log("[pwaPlugin] network is now offline");
     });
 
     Object.defineProperties(Vue.prototype, {
