@@ -4,26 +4,58 @@ This is the PWA base, for details of the vue-base, please reffer to the [README.
 
 ## PWA Base
 
-Add the vue pwa feature from the cli
+In addition to the vue-base, it contains the installation of the *vue pwa* feature from the **vue cli**
 
-``` 
-vue add pwa
-```
+> vue add pwa
 
-## PWA additions / customizations
+----
 
-### src/registerServiceWorker.ts
+## PWA customizations
+
+We have changed or added some details to make it more customizable
+
+### `src/registerServiceWorker.ts`
 
 Dispatching all the service worker events so we can catch them on the document / app.
 
-### src/sw.js
+### `src/sw.js`
 
 Adding our own service worker, to customize its behavior.
 For further infomration check the file itself.
 
-### vue.config.js
+### `vue.config.js`
 
 Added the **pwa** config, to allow further customization and loading of our own service worker.
+
+----
+
+## PWA additions
+
+We created in addition some features, to handle the PWA even better
+
+### **Plugin:** `pwaState.ts`
+
+This plugin adds some EventListeners and logs them to the console.
+Also it includes a state, which is available in all Components:
+
+``` 
+$pwa.isOffline
+$pwa.isReady
+```
+
+#### isReady
+
+Indicates if the PWA is ready. This is actually coming from the service workers "ready" event.
+
+#### isOffline
+
+Indicates if the application is offline or not, this is a general event, and has nothing to do with PWA itself, but can be useful to detect or show the current network status.
+
+### **Component:** `pwaRefreshUi.vue`
+
+This component shows an example of how you can listen to the service workers **updated** event, and let the user to decide to update / refresh the current page/app.
+
+----
 
 ## Documentation
 
