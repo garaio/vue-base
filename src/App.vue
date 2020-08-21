@@ -41,6 +41,8 @@ export default class App extends Vue {
     <transition name="fade" mode="out-in">
       <router-view />
     </transition>
+    <h2>Version: {{ packageName }} {{ packageVersion }}</h2>
+    <PwaRefreshUi />
   </div>
 </template>
 
@@ -50,9 +52,6 @@ export default class App extends Vue {
 
 <style lang="scss">
 #app {
-  font-family: Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
