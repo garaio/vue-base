@@ -13,6 +13,10 @@ import router from "./router";
 
 Vue.mixin(message);
 
+// PWA State
+import PwaState from "@/plugins/pwaState";
+Vue.use(PwaState);
+
 Vue.config.productionTip = false;
 
 new Vue({
