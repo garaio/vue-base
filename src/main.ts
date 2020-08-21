@@ -7,6 +7,10 @@ import "./registerServiceWorker";
 import message from "@/mixins/message";
 Vue.mixin(message);
 
+// PWA State
+import PwaState from "@/plugins/pwaState";
+Vue.use(PwaState);
+
 Vue.config.productionTip = false;
 
 new Vue({
