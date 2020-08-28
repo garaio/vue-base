@@ -2,6 +2,10 @@
 
 This is the PWA base, for details of the vue-base, please reffer to the [README.md](./README.md)
 
+## Preview url
+
+* [boilerplates-pwa--garaio-vue-base.netlify.app](https://boilerplates-pwa--garaio-vue-base.netlify.app)
+
 ## PWA Base
 
 In addition to the vue-base, it contains the installation of the *vue pwa* feature from the **vue cli**

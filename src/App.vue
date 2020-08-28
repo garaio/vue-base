@@ -35,7 +35,7 @@ export default class App extends Vue {
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to the GARAIO Emergency Room Vue.js Base App" />
+    <HelloWorld msg="Welcome to the GARAIO Vue.js boilerplate: PWA" />
     <Counter />
     <h2>Version: {{ packageName }} {{ packageVersion }}</h2>
     <PwaRefreshUi />
