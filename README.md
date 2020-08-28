@@ -1,3 +1,7 @@
+# vue-base-vuetify README
+
+Please check specific readme file: [README-VUETIFY.md](./README-VUETIFY.md)
+
 # vue-base
 
 This is a possible base setup of Vue.js for the Emergency Room team.
