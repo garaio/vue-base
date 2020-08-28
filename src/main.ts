@@ -1,6 +1,7 @@
 import Vue, { VNode } from "vue";
 import App from "./App.vue";
 import store from "./store";
+import vuetify from "./plugins/vuetify";
 
 // Component registration
 import "@/registerAllComponents";
@@ -17,5 +18,6 @@ Vue.config.productionTip = false;
 new Vue({
   store: store.original,
   router,
+  vuetify,
   render: (h): VNode => h(App),
 }).$mount("#app");
