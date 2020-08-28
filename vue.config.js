@@ -8,6 +8,9 @@ module.exports = {
       scss: {
         additionalData: `@import "@/scss/_importIntoComponents.scss";`,
       },
+      sass: {
+        prependData: '@import "@/sass/vuetifyVariables.sass"',
+      },
     },
   },
   transpileDependencies: ["vuetify"],
