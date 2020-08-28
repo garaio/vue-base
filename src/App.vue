@@ -53,9 +53,9 @@ export default class App extends Vue {
 <style lang="scss">
 #app {
   text-align: center;
-  color: #2c3e50;
+  color: $vueBlack;
+  margin-top: 60px;
 }
-
 nav {
   padding: 30px;
 

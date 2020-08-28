@@ -18,6 +18,7 @@ export default class PwaRefreshUi extends Vue {
     document.addEventListener("swUpdated", this.showRefreshUI, { once: true });
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   showRefreshUI(e: any) {
     // Display a snackbar inviting the user to refresh/reload the app due to an app update being available.
     // The new service worker is installed, but not yet active.
