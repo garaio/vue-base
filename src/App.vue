@@ -23,6 +23,7 @@
           transition="scale-transition"
           width="40"
         />
+        GARAIO vue-base-vuetify
       </div>
 
       <v-spacer></v-spacer>
@@ -39,7 +40,7 @@
 
     <v-main>
       <img alt="Vuetify logo" src="./assets/logo.svg" height="219" />
-      <HelloWorld msg="Welcome to the GARAIO Emergency Room Vue.js Base App" />
+      <HelloWorld msg="Welcome to the GARAIO Vue.js boilerplate: Vuetify" />
       <Counter />
     </v-main>
   </v-app>
