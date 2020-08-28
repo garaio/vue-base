@@ -1,18 +1,19 @@
 {
   "name": "vue-base",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lint:nofix": "vue-cli-service lint --no-fix"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
-    "vue-class-component": "^7.2.3",
-    "vue-property-decorator": "^8.4.2",
+    "vue-class-component": "^7.2.5",
+    "vue-property-decorator": "^8.5.1",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
@@ -35,6 +36,7 @@
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuex-class": "^0.3.2"
   }
 }

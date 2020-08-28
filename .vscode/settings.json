@@ -1,0 +1,20 @@
+{
+  "vetur.format.enable": true,
+  "vetur.validation.template": false,
+  "eslint.alwaysShowStatus": true,
+  "vetur.experimental.templateInterpolationService": true,
+  "eslint.validate": ["javascript", "html", "vue"],
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "vetur.format.defaultFormatter.js": "prettier-eslint",
+  "vetur.format.defaultFormatter.html": "prettier",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "path-intellisense.mappings": {
+    "@": "${workspaceRoot}/src"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "npm.enableScriptExplorer": true,
+  "eslint.enable": true
+}
