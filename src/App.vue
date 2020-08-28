@@ -55,6 +55,7 @@ export default class App extends Vue {
           transition="scale-transition"
           width="40"
         />
+        GARAIO vue-base-vuetify
       </div>
 
       <v-spacer></v-spacer>

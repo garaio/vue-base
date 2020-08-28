@@ -2,9 +2,13 @@
 
 This is the Vuefity base, for details of the vue-base, please reffer to the [README.md](./README.md)
 
+## Preview url
+
+* [boilerplates-vuetify--garaio-vue-base.netlify.app](https://boilerplates-vuetify--garaio-vue-base.netlify.app)
+
 ## Vuetify Base
 
-In addition to the vue-base, it contains the installation of the *vue vuetify* feature from the **vue cli**
+In addition to the vue-base, it contains the installation of the *vuetify* feature from the **vue cli**
 
 > vue add vuetify
 
