@@ -8,7 +8,7 @@ The base setup of a vue project developed at Emergency Room Team.
 
 ## Standard vue-cli project setup
 
-Its a base setup of vue-cli prject using the following choices:
+Its a base setup of vue-cli project using the following choices:
 
 * node-sass
 * babel
@@ -65,16 +65,35 @@ npm run serve
 npm run build
 ```
 
+### Lints and fixes files
+
+``` 
+npm run lint
+```
+
+### Run all tests
+
+This script has to collect all type of tests (unit,snapshot,ect) and run it.
+In case if you add a new type of test, you should add to this script.
+Before we would run these tests we run the linter.
+
+``` 
+npm run tests
+```
+
 ### Run your unit tests
 
 ``` 
 npm run test:unit
 ```
 
-### Lints and fixes files
+### Run unit test chrome debugger
+
+In case if you want to debug your unit tests in Chrome inspector, you just need to run this script.
+More about how to debug unit tests in Chrome inspector: <https://stackoverflow.com/c/garaio/questions/198>
 
 ``` 
-npm run lint
+npm run test:unit:debug
 ```
 
 ### Customize configuration
