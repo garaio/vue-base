@@ -8,8 +8,8 @@
     "lint": "vue-cli-service lint",
     "lint:nofix": "vue-cli-service lint --no-fix",
     "test:unit": "vue-cli-service test:unit",
-    "tests":"npm run lint && npm run test:unit",
-    "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --no-cache --runInBand"
+    "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --no-cache --runInBand",
+    "tests":"npm run lint && npm run test:unit"
   },
   "dependencies": {
     "core-js": "^3.6.5",
