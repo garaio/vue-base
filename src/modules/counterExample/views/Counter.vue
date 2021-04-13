@@ -6,6 +6,11 @@
       modular way.
     </p>
     <Counter />
+    <h1>Possible Translation usage:</h1>
+    <!-- Example of using the translation system: -->
+    <h1>{{ $t($Resources.Counter_Title) }}</h1>
+    <p>{{ $t($Resources.Counter_Text) }}</p>
+    <p>{{ abcExample }}</p>
   </div>
 </template>
 
@@ -16,5 +21,12 @@ import Counter from "../components/Counter.vue";
 @Component({
   components: { Counter },
 })
-export default class CounterView extends Vue {}
+export default class CounterView extends Vue {
+  abcExample = "";
+
+  created() {
+    // How to access translation string in the TS/JS part:
+    this.abcExample = this.$t(this.$Resources.Counter_Title);
+  }
+}
 </script>
