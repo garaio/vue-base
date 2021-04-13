@@ -1,32 +1,69 @@
-import { GetterTree, MutationTree, ActionTree } from "vuex";
-import { RootState } from "@/store/types";
-import { STATE, GETTERS, ACTIONS, MUTATIONS } from "./types";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-use-before-define */
+import {
+  defineActions,
+  defineGetters,
+  defineModule,
+  defineMutations,
+} from "direct-vuex";
+import { moduleActionContext, moduleGetterContext } from "@/store";
 export const namespaced = true;
 
-export const state: STATE = {
+export interface ApiDemoState {
+  counter: number;
+  demo: any;
+}
+
+export const state: ApiDemoState = {
   counter: 0,
+  demo: {},
 };
 
-export const getters: GetterTree<STATE, RootState> = {
-  [GETTERS.CURRENT_COUNT](state): number {
+export const getters = defineGetters<ApiDemoState>()({
+  currentCount(...args): number {
+    const { state } = getGetterContext(args);
     return state.counter;
   },
-};
+});
 
-export const actions: ActionTree<STATE, RootState> = {
-  [ACTIONS.INCREMENT]({ commit }): void {
-    commit(MUTATIONS.INCREMENT);
+export const actions = defineActions({
+  init(context): void {
+    // Possible init call from rootStore
+    // const { commit } = getActionContext(context);
+    return;
   },
-  [ACTIONS.RESET]({ commit }): void {
-    commit(MUTATIONS.RESET);
+  someAsyncFunction(context): Promise<void | null> | undefined {
+    // Possible async call here, mostly used with imported API Clients
+    // const { commit } = getActionContext(context);
+    // const client = new DemoApiClient();
+    // return client.demoCall().then((response: any) => {
+    //   commit.setDemo(response);
+    // });
+    return;
   },
-};
+});
 
-export const mutations: MutationTree<STATE> = {
-  [MUTATIONS.INCREMENT](state) {
+export const mutations = defineMutations<ApiDemoState>()({
+  setDemo(state, demo) {
+    state.demo = demo;
+  },
+  increment(state) {
     state.counter++;
   },
-  [MUTATIONS.RESET](state) {
+  reset(state) {
     state.counter = 0;
   },
-};
+});
+
+const apiDemo = defineModule({
+  state,
+  getters,
+  actions,
+  mutations,
+});
+
+export default apiDemo;
+const getGetterContext = (args: [any, any, any, any]) =>
+  moduleGetterContext(args, apiDemo);
+const getActionContext = (context: any) =>
+  moduleActionContext(context, apiDemo);

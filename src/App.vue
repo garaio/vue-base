@@ -10,6 +10,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "./components/HelloWorld.vue";
 import Counter from "@/modules/counterExample/views/Counter.vue";
+import store from "./store";
 
 @Component({
   components: {
@@ -17,7 +18,20 @@ import Counter from "@/modules/counterExample/views/Counter.vue";
     Counter,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  created() {
+    store.dispatch
+      .init()
+      .then(() => {
+        // eslint-disable-next-line no-console
+        console.log("[store] init: store initialized");
+      })
+      .catch(error => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+      });
+  }
+}
 </script>
 
 <style lang="scss">
