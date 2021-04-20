@@ -83,6 +83,14 @@
         >
       </li>
       <li>
+        <a
+          href="https://github.com/paroi-tech/direct-vuex"
+          target="_blank"
+          rel="noopener"
+          >direct-vuex</a
+        >
+      </li>
+      <li>
         <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
       </li>
       <li>
