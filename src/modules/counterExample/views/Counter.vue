@@ -1,18 +1,12 @@
 <template>
-  <v-container fluid>
-    <v-slide-y-transition mode="out-in">
-      <v-row>
-        <v-col>
-          <h1>Counter Example</h1>
-          <p>
-            This is an example of a Vue.js component integrated with Vuex, in a
-            more modular way.
-          </p>
-          <Counter />
-        </v-col>
-      </v-row>
-    </v-slide-y-transition>
-  </v-container>
+  <div>
+    <h1>Counter Example</h1>
+    <p>
+      This is an example of a Vue.js component integrated with Vuex, in a more
+      modular way.
+    </p>
+    <Counter />
+  </div>
 </template>
 
 <script lang="ts">
