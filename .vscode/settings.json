@@ -15,6 +15,5 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "npm.enableScriptExplorer": true,
   "eslint.enable": true
 }
