@@ -15,11 +15,11 @@ export const AVAILABLE_LANGUAGES: LanguageDetails[] = [
 ];
 export const LOCALSTORAGE_LANGUAGE_KEY = "language";
 
-export const getLanguageFromLocalStorage = () => {
+export const getLanguageFromLocalStorage = (): unknown => {
   return getFromLocalStorage(LOCALSTORAGE_LANGUAGE_KEY);
 };
 
-export const updateCurrentLanguage = (language: string) => {
+export const updateCurrentLanguage = (language: string): void => {
   saveToLocalStorage(LOCALSTORAGE_LANGUAGE_KEY, language);
   // if (moment) moment.locale(language);
 };

@@ -22,11 +22,13 @@ export const getters = defineGetters<ApiDemoState>()({
 });
 
 export const actions = defineActions({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   init(context): void {
     // Possible init call from rootStore
     // const { commit } = getActionContext(context);
     return;
   },
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   someAsyncFunction(context): Promise<void | null> | undefined {
     // Possible async call here, mostly used with imported API Clients
     // const { commit } = getActionContext(context);
@@ -58,5 +60,7 @@ const apiDemo = defineModule({
 });
 
 export default apiDemo;
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type,@typescript-eslint/no-unused-vars
 const getGetterContext = (args: [any, any, any, any]) => moduleGetterContext(args, apiDemo);
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type,@typescript-eslint/no-unused-vars
 const getActionContext = (context: any) => moduleActionContext(context, apiDemo);

@@ -1,4 +1,4 @@
-import Vue from "vue";
+import Vue, { VNode } from "vue";
 import App from "./App.vue";
 import store from "./store";
 
@@ -10,5 +10,5 @@ Vue.config.productionTip = false;
 
 new Vue({
   store: store.original,
-  render: h => h(App),
+  render: (h): VNode => h(App),
 }).$mount("#app");

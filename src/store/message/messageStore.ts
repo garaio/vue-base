@@ -15,7 +15,7 @@ import { TranslationApiClient } from "@/api/exampleApi";
 
 const DEVELOPMENT: boolean = process.env.NODE_ENV === "development" ? true : false;
 
-function initMessagesState() {
+function initMessagesState(): I18nMessageContainer {
   const messages: I18nMessageContainer = {};
   AVAILABLE_LANGUAGES.map(language => {
     messages[language.short] = {};
@@ -155,5 +155,7 @@ const message = defineModule({
 });
 
 export default message;
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type,@typescript-eslint/no-unused-vars
 const getGetterContext = (args: [any, any, any, any]) => moduleGetterContext(args, message);
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type,@typescript-eslint/no-unused-vars
 const getActionContext = (context: any) => moduleActionContext(context, message);

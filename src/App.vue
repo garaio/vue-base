@@ -11,7 +11,7 @@ import store from "./store";
   },
 })
 export default class App extends Vue {
-  created() {
+  created(): void {
     store.dispatch
       .init()
       .then(() => {
