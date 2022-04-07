@@ -23,7 +23,7 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-    indent: ["warn", 2],
+    indent: "off", // Prettier is doing the indentation, this otherwise can conflict
     quotes: [0, "double"],
     semi: [0, "always"],
     "@typescript-eslint/consistent-type-assertions": "warn",

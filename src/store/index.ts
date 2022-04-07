@@ -7,13 +7,7 @@ import { RootState } from "./types";
 
 Vue.use(Vuex);
 
-const {
-  store,
-  rootActionContext,
-  moduleActionContext,
-  rootGetterContext,
-  moduleGetterContext,
-} = createDirectStore({
+const { store, rootActionContext, moduleActionContext, rootGetterContext, moduleGetterContext } = createDirectStore({
   strict: process.env.NODE_ENV !== "production",
   state: {} as RootState,
   actions: {
@@ -38,12 +32,7 @@ export default store;
 
 // The following exports will be used to enable types in the
 // implementation of actions and getters.
-export {
-  rootActionContext,
-  moduleActionContext,
-  rootGetterContext,
-  moduleGetterContext,
-};
+export { rootActionContext, moduleActionContext, rootGetterContext, moduleGetterContext };
 
 // The following lines enable types in the injected store '$store'.
 export type AppStore = typeof store;

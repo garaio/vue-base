@@ -1,11 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import store, { moduleActionContext, moduleGetterContext } from "@/store";
-import {
-  MessageState,
-  I18nMessageContainer,
-  DEFAULT_CONTEXT,
-} from "./messageStoreTypes";
+import { MessageState, I18nMessageContainer, DEFAULT_CONTEXT } from "./messageStoreTypes";
 import {
   updateCurrentLanguage,
   getLanguageFromLocalStorage,
@@ -13,17 +9,11 @@ import {
   AVAILABLE_LANGUAGES,
   LanguageDetails,
 } from "@/utils/languageHandling";
-import {
-  defineActions,
-  defineGetters,
-  defineModule,
-  defineMutations,
-} from "direct-vuex";
+import { defineActions, defineGetters, defineModule, defineMutations } from "direct-vuex";
 // NOTE: Important, you need a Translation ApiClient!
 import { TranslationApiClient } from "@/api/exampleApi";
 
-const DEVELOPMENT: boolean =
-  process.env.NODE_ENV === "development" ? true : false;
+const DEVELOPMENT: boolean = process.env.NODE_ENV === "development" ? true : false;
 
 function initMessagesState() {
   const messages: I18nMessageContainer = {};
@@ -49,46 +39,43 @@ export const getters = defineGetters<MessageState>()({
   getCurrentLanguage(state): string {
     return state.currentLanguage;
   },
-  getMessage: (...args) => (
-    key: string,
-    variables: string[] = [],
-    language: string = state.currentLanguage
-  ): string => {
-    const { state } = getGetterContext(args);
-    if (state.messages?.[language]?.[key]) {
-      let message: string = state.messages?.[language]?.[key] || key;
-      // Replace variables in the sentence if we have any
-      if (variables.length > 0) {
-        variables.forEach((element: string, index: number) => {
-          message = message.replaceAll("{" + index + "}", element);
-        });
+  getMessage:
+    (...args) =>
+    (key: string, variables: string[] = [], language: string = state.currentLanguage): string => {
+      const { state } = getGetterContext(args);
+      if (state.messages?.[language]?.[key]) {
+        let message: string = state.messages?.[language]?.[key] || key;
+        // Replace variables in the sentence if we have any
+        if (variables.length > 0) {
+          variables.forEach((element: string, index: number) => {
+            message = message.replaceAll("{" + index + "}", element);
+          });
+        }
+        return message;
+      } else if (state.messages?.[language]?.[key] === null) {
+        if (DEVELOPMENT) {
+          // eslint-disable-next-line no-console
+          console.warn(`Message "${key}" is empty`);
+        }
+        return key;
       }
-      return message;
-    } else if (state.messages?.[language]?.[key] === null) {
+
+      // String not found
       if (DEVELOPMENT) {
         // eslint-disable-next-line no-console
-        console.warn(`Message "${key}" is empty`);
+        console.warn(`Message "${key}" not found in translations`);
+        store.dispatch.message.newMessage(key);
       }
+
+      // return variable name instead
       return key;
-    }
-
-    // String not found
-    if (DEVELOPMENT) {
-      // eslint-disable-next-line no-console
-      console.warn(`Message "${key}" not found in translations`);
-      store.dispatch.message.newMessage(key);
-    }
-
-    // return variable name instead
-    return key;
-  },
-  getMessageWithContext: (...args) => (
-    key: string,
-    context = DEFAULT_CONTEXT
-  ): string => {
-    const { getters } = getGetterContext(args);
-    return getters.getMessage(context + key);
-  },
+    },
+  getMessageWithContext:
+    (...args) =>
+    (key: string, context = DEFAULT_CONTEXT): string => {
+      const { getters } = getGetterContext(args);
+      return getters.getMessage(context + key);
+    },
 });
 
 export const actions = defineActions({
@@ -100,9 +87,7 @@ export const actions = defineActions({
     const { dispatch } = getActionContext(context);
     const localStorageLanguage = getLanguageFromLocalStorage();
 
-    const language = localStorageLanguage
-      ? localStorageLanguage
-      : DEFAULT_LANGUAGE;
+    const language = localStorageLanguage ? localStorageLanguage : DEFAULT_LANGUAGE;
     return dispatch.setLanguage(language);
   },
   async setLanguage(context, language) {
@@ -170,7 +155,5 @@ const message = defineModule({
 });
 
 export default message;
-const getGetterContext = (args: [any, any, any, any]) =>
-  moduleGetterContext(args, message);
-const getActionContext = (context: any) =>
-  moduleActionContext(context, message);
+const getGetterContext = (args: [any, any, any, any]) => moduleGetterContext(args, message);
+const getActionContext = (context: any) => moduleActionContext(context, message);

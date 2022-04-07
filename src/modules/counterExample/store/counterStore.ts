@@ -1,11 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import {
-  defineActions,
-  defineGetters,
-  defineModule,
-  defineMutations,
-} from "direct-vuex";
+import { defineActions, defineGetters, defineModule, defineMutations } from "direct-vuex";
 import { moduleActionContext, moduleGetterContext } from "@/store";
 export const namespaced = true;
 
@@ -63,7 +58,5 @@ const apiDemo = defineModule({
 });
 
 export default apiDemo;
-const getGetterContext = (args: [any, any, any, any]) =>
-  moduleGetterContext(args, apiDemo);
-const getActionContext = (context: any) =>
-  moduleActionContext(context, apiDemo);
+const getGetterContext = (args: [any, any, any, any]) => moduleGetterContext(args, apiDemo);
+const getActionContext = (context: any) => moduleActionContext(context, apiDemo);
