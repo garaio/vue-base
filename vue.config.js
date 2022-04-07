@@ -9,7 +9,7 @@ module.exports = {
         additionalData: `@import "@/scss/_importIntoComponents.scss";`,
       },
       sass: {
-        prependData: '@import "@/sass/vuetifyVariables.sass"',
+        additionalData: '@import "@/sass/vuetifyVariables.sass"',
       },
     },
   },
