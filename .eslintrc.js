@@ -5,6 +5,8 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended",
     "plugin:vue/recommended",
     "@vue/typescript/recommended",
@@ -12,7 +14,7 @@ module.exports = {
     "@vue/prettier/@typescript-eslint",
   ],
 
-  plugins: ["@typescript-eslint"],
+  plugins: ["@typescript-eslint", "import", "prettier"],
 
   parserOptions: {
     ecmaVersion: 2020,
@@ -24,16 +26,31 @@ module.exports = {
     indent: ["warn", 2],
     quotes: [0, "double"],
     semi: [0, "always"],
+    "@typescript-eslint/consistent-type-assertions": "warn",
+    "@typescript-eslint/explicit-function-return-type": process.env.NODE_ENV === "production" ? "off" : "warn",
+    "import/named": process.env.NODE_ENV === "production" ? "error" : "warn",
+    "@typescript-eslint/no-explicit-any": process.env.NODE_ENV === "production" ? "off" : "warn",
+    "vue/component-tags-order": [
+      "error",
+      {
+        order: ["script", "template", "style"],
+      },
+    ],
   },
   overrides: [
     {
-      files: [
-        "**/__tests__/*.{j,t}s?(x)",
-        "**/tests/unit/**/*.spec.{j,t}s?(x)",
-      ],
+      files: ["**/__tests__/*.{j,t}s?(x)", "**/tests/unit/**/*.spec.{j,t}s?(x)"],
       env: {
         jest: true,
       },
     },
   ],
+  settings: {
+    "import/resolver": {
+      alias: {
+        map: [["@", "./src/"]],
+        extensions: [".ts", ".js", ".vue"],
+      },
+    },
+  },
 };
