@@ -7,7 +7,7 @@ module.exports = {
     sourceMap: true,
     loaderOptions: {
       scss: {
-        prependData: `@import "@/scss/_importIntoComponents.scss";`,
+        additionalData: `@import "@/scss/_importIntoComponents.scss";`,
       },
     },
   },
