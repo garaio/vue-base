@@ -17,7 +17,6 @@ module.exports = {
     themeColor: "#42b983",
     msTileColor: "#42b983",
     manifestOptions: {
-      // eslint-disable-next-line @typescript-eslint/camelcase
       background_color: "#42b983",
     },
     workboxPluginMode: "InjectManifest",

@@ -21,9 +21,7 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 // Navigation Route registration
 // This is needed if you have different urls: Basically when using the Vue's Router
-workbox.routing.registerNavigationRoute(
-  workbox.precaching.getCacheKeyForURL("/index.html")
-);
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/index.html"));
 
 // Image cache for requests to img/icons (android-chrom, favicon etc.)
 workbox.routing.registerRoute(
