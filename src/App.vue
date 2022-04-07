@@ -18,7 +18,6 @@ export default class App extends Vue {
   packageName = packageJSON.name;
   icons = ["widgets", "home", "heart"];
 
-
   created(): void {
     store.dispatch
       .init()
