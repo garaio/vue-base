@@ -10,7 +10,7 @@
     "test:unit": "vue-cli-service test:unit --no-cache",
     "test:unit:watch": "vue-cli-service test:unit -- --watch",
     "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --no-cache --runInBand",
-    "tests":"npm run lint:nofix && npm run test:unit"
+    "tests": "npm run lint:nofix && npm run test:unit"
   },
   "dependencies": {
     "core-js": "^3.6.5",
