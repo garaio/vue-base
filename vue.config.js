@@ -1,7 +1,6 @@
 module.exports = {
   outputDir: "dist",
   productionSourceMap: false,
-
   css: {
     extract: false,
     sourceMap: true,
@@ -9,9 +8,12 @@ module.exports = {
       scss: {
         additionalData: `@import "@/scss/_importIntoComponents.scss";`,
       },
+      sass: {
+        additionalData: '@import "@/sass/vuetifyVariables.sass"',
+      },
     },
   },
-
+  transpileDependencies: ["vuetify"],
   pwa: {
     name: "GARAIO Vue base PWA",
     themeColor: "#42b983",

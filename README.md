@@ -1,6 +1,8 @@
 # vue-base-pwa README
+# vue-base-vuetify README
 
 Please check specific readme file: [README-PWA.md](./README-PWA.md)
+Please check specific readme file: [README-VUETIFY.md](./README-VUETIFY.md)
 
 # vue-base
 

@@ -16,6 +16,8 @@ import PwaRefreshUi from "@/components/PwaRefreshUi.vue";
 export default class App extends Vue {
   packageVersion = packageJSON.version;
   packageName = packageJSON.name;
+  icons = ["widgets", "home", "heart"];
+
 
   created(): void {
     store.dispatch
@@ -33,13 +35,49 @@ export default class App extends Vue {
 </script>
 
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to the GARAIO Vue.js boilerplate: PWA" />
-    <Counter />
-    <h2>Version: {{ packageName }} {{ packageVersion }}</h2>
-    <PwaRefreshUi />
-  </div>
+  <v-app id="app">
+    <v-navigation-drawer app clipped>
+      <v-list>
+        <v-list-item v-for="i in 3" :key="i" :to="{ path: '/page' + i }">
+          <v-list-item-action>
+            <v-icon>mdi-{{ icons[i - 1] }}</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Page {{ i }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar app clipped-left color="primary" dark>
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
+        GARAIO vue-base-vuetify
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text>
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <img alt="Vuetify logo" src="./assets/logo.svg" height="219" />
+      <HelloWorld msg="Welcome to the GARAIO Vue.js boilerplate: Vuetify" />
+      <Counter />
+      <h2>Version: {{ packageName }} {{ packageVersion }}</h2>
+      <PwaRefreshUi />
+    </v-main>
+  </v-app>
 </template>
 
 <style lang="scss">
