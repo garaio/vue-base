@@ -7,7 +7,7 @@ export interface PwaState {
 
 const PwaState = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  install(Vue: any) {
+  install(Vue: any): void {
     const state: PwaState = Vue.observable({
       isReady: false,
       isOffline: false,

@@ -14,8 +14,8 @@ import router from "./router";
 Vue.mixin(message);
 
 // PWA State
-import PwaState from "@/plugins/pwaState";
-Vue.use(PwaState);
+import pwaState from "@/plugins/pwaState";
+Vue.use(pwaState);
 
 Vue.config.productionTip = false;
 
