@@ -1,5 +1,12 @@
-# vue-base-pwa README
-# vue-base-vuetify README
+# vue-base-vuetify-pwa README
+
+This is a combination of pwa and vuetify branch, to support both things together
+
+## Preview url
+
+- [boilerplates-pwa-vuetify--garaio-vue-base.netlify.app/](https://boilerplates-pwa-vuetify--garaio-vue-base.netlify.app/)
+
+# vue-base-vuetify-pwa README
 
 Please check specific readme file: [README-PWA.md](./README-PWA.md)
 Please check specific readme file: [README-VUETIFY.md](./README-VUETIFY.md)
@@ -16,12 +23,12 @@ The base setup of a vue project developed at Emergency Room Team.
 
 Its a base setup of vue-cli project using the following choices:
 
-* node-sass
-* babel
-* typescript
-* vuex
-* eslint
-* unit-jest
+- node-sass
+- babel
+- typescript
+- vuex
+- eslint
+- unit-jest
 
 ## Extended manually
 
@@ -51,29 +58,29 @@ For example code we have a demo component / module in here, this can be simply r
 
 We have worked out a vuex-typescript standard how to code and use the store with typescript and the class - way.
 
----------------------------------------
+---
 
 ## Project setup
 
-``` 
+```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
 
-``` 
+```
 npm run serve
 ```
 
 ### Compiles and minifies for production
 
-``` 
+```
 npm run build
 ```
 
 ### Lints and fixes files
 
-``` 
+```
 npm run lint
 ```
 
@@ -83,13 +90,13 @@ This script has to collect all type of tests (unit,snapshot,ect) and run it.
 In case if you add a new type of test, you should add to this script.
 Before we would run these tests we run the linter.
 
-``` 
+```
 npm run tests
 ```
 
 ### Run your unit tests
 
-``` 
+```
 npm run test:unit
 ```
 
@@ -98,7 +105,7 @@ npm run test:unit
 In case if you want to debug your unit tests in Chrome inspector, you just need to run this script.
 More about how to debug unit tests in Chrome inspector: <https://stackoverflow.com/c/garaio/questions/198>
 
-``` 
+```
 npm run test:unit:debug
 ```
 
