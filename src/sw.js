@@ -16,8 +16,11 @@ self.addEventListener("message", event => {
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to requests for URLs in the manifest.
  * See https://goo.gl/S9QRab
  */
-self.__precacheManifest = [].concat(self.__precacheManifest || []);
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+const manifest = self.__WB_MANIFEST;
+if (manifest) {
+  // console.log("precached", manifest);
+  workbox.precaching.precacheAndRoute(manifest, {});
+}
 
 // Navigation Route registration
 // This is needed if you have different urls: Basically when using the Vue's Router
