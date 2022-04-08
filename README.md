@@ -4,7 +4,7 @@ This is a combination of pwa and vuetify branch, to support both things together
 
 ## Preview url
 
-- [boilerplates-pwa-vuetify--garaio-vue-base.netlify.app/](https://boilerplates-pwa-vuetify--garaio-vue-base.netlify.app/)
+- [boilerplates-vuetify-pwa--garaio-vue-base.netlify.app](https://boilerplates-vuetify-pwa--garaio-vue-base.netlify.app)
 
 # vue-base-vuetify-pwa README
 
