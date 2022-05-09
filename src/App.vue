@@ -4,9 +4,15 @@
       <router-link to="/">Home</router-link> | <router-link to="/about">About</router-link> |
       <router-link to="/counter">Counter</router-link>
     </nav>
-    <router-view />
+    <transition name="fade" mode="out-in">
+      <router-view />
+    </transition>
   </div>
 </template>
+
+<style lang="scss">
+@import "@/scss/_main.scss";
+</style>
 
 <style lang="scss">
 #app {
