@@ -1,45 +1,32 @@
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
-import Counter from "@/modules/counterExample/views/Counter.vue";
-import store from "./store";
-
-@Component({
-  components: {
-    HelloWorld,
-    Counter,
-  },
-})
-export default class App extends Vue {
-  created(): void {
-    store.dispatch
-      .init()
-      .then(() => {
-        // eslint-disable-next-line no-console
-        console.log("[store] init: store initialized");
-      })
-      .catch(error => {
-        // eslint-disable-next-line no-console
-        console.error(error);
-      });
-  }
-}
-</script>
-
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to the GARAIO Emergency Room Vue.js Base App" />
-    <Counter />
+    <nav>
+      <router-link to="/">Home</router-link> | <router-link to="/about">About</router-link> |
+      <router-link to="/counter">Counter</router-link>
+    </nav>
+    <router-view />
   </div>
 </template>
 
 <style lang="scss">
-@import "@/scss/_main.scss";
-
 #app {
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: $vueBlack;
-  margin-top: 60px;
+  color: #2c3e50;
+}
+
+nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
 }
 </style>
